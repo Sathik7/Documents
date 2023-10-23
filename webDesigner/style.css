@@ -1,0 +1,93 @@
+.sidebar{
+    width: 291.6px;
+    height: 100%;
+    background-color: black;
+    color: white;
+    float: left;
+}
+.elements{
+    border: 1px solid black;
+    padding: 10px;
+    background-color: black;
+    
+}
+.elements > img{
+    background-color: white;
+    width: 60px;
+    height: 30px;
+    
+}
+.elements >p{
+    color: white;
+    margin: 0%;
+    padding: 5px;
+    width: 200px;
+    font-family: sans-serif;
+    font-size: large;
+    float: left;
+}
+.body > button{
+    float: right;
+    width: 10%;
+    padding: 10px;
+    margin: 5px;
+    font-size: medium;
+    font-family: sans-serif;
+}
+#box{
+    border: 1px solid black;
+    height: 500px;
+    width: 75%;
+    /* margin: 15px; */
+    float: right;
+    position: relative;
+}
+
+.elements:hover{
+    background-color: rgb(34, 50, 31);
+}
+#labl{
+position: absolute;
+  z-index: 9;
+  cursor: move;
+  z-index: 10;
+}
+
+#elementContainer {
+    width: 300px;
+    height: 300px;
+    background-color: lightgray;
+  }
+
+  .draggable {
+    width: 100px;
+    height: 30px;
+    background-color: lightblue;
+    text-align: center;
+    line-height: 30px;
+    cursor: grab;
+  }
+  /* .element {
+width: 50px;
+height: 50px;
+background-color: pink;
+position: absolute;
+} */
+.element {
+width: auto;
+height: 50PX;
+background-color: white;
+position: absolute;
+cursor: move;
+}
+
+table {
+        border-collapse: collapse;
+      }
+  
+      td {
+        border: 1px solid black;
+        padding: 4px;
+      }
+
+/* ---------------- */
