@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+    <div class="body">
+        <h1>EMI Calculator</h1>
+        <form onsubmit=" runme(); return false">
+        <table>
+            <tr>
+                <td>Enter  the total principle amount : </td>
+                <td><input type="text"  id="p"></td>
+
+            </tr>
+            <tr>
+                <td>Enter  the rate of interest per month : </td>
+                <td><input type="text"  id="r"></td>
+            </tr>
+            <tr>
+                <td>Enter  the total duration : </td>
+                <td><input type="text"  id="y"></td>
+            </tr>
+            <tr>
+                <td>Enter  the Starting year and month : </td>
+                <td><input type="text"  id="yy"><input type="text"  id="mm"></td>
+            </tr>
+            <tr>
+                <td id="sub" colspan="2"><input type="submit" id="submit"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><h2>Result: </h2></td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">Monthly EMI : </td>
+                <td><div id="emi"></div><!--<br><div id="tot"></div>--></td>
+            </tr>
+            
+        </table>
+        <table class="t2" border="1px">
+            <!--<tr>
+                <th>Month</th>
+                <th>principle</th>
+                <th>Interst</th>
+                <th>Total</th>
+                <th>Balance</th>
+                <th>Paid</th>
+            </tr>-->
+            <tr>
+                <td><div id="month"></div></td>
+                <td><div id="principle"></div></td>
+                <td><div id="interest"></div></td>
+                <td><div id="total"></div></td>
+                <td><div id="balance"></div></td>
+                <td><div id="paid"></div></td>
+            </tr>
+        </table>
+        </form>
+    </div>
+    <script src="custom.js"></script>
+</body>
+</html>
