@@ -1,0 +1,104 @@
+.floatingleft {
+
+    
+    opacity: 0;
+    filter: blur(1px);
+    transform: translateX(-100%);
+    transition: all 1s;
+    
+   
+   
+ }
+
+ @media(prefers-reduced-motion){
+  .floatingleft{
+    transition: none;
+  }
+ }
+
+ .show {
+    
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+
+  
+
+
+  .floatingtop{
+    opacity: 0;
+    filter: blur(1px);
+    transform: translateY(-100%);
+    transition: all 1s;
+
+  }
+  .show{
+    /* Define styles when the box is shown */
+    /* animation: floatLeft 2s ease-in-out ; */
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+  .indexcard:nth-child(2){
+    transition-delay: 300ms;
+  }
+  .indexcard:nth-child(3){
+    transition-delay: 500ms;
+  }
+  .indexcard:nth-child(4){
+    transition-delay: 700ms;
+  }
+
+  
+  .floatingbottom{
+    opacity: 0;
+    filter: blur(1px);
+    transform: translateY(+150%);
+    transition: all 2s;
+
+  }
+
+  .show {
+    /* Define styles when the box is shown */
+    /* animation: floatLeft 2s ease-in-out ; */
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+
+  .floatingright{
+
+    opacity: 0;
+    filter: blur(1px);
+    transform: translateX(+100%);
+    transition: all 1s;
+
+  }
+
+  .show {
+    /* Define styles when the box is shown */
+    /* animation: floatLeft 2s ease-in-out ; */
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+
+
+  .fadein{
+
+    opacity: 0;
+    filter: blur(1px);
+    transform: translate3d(-100%);
+    transition: all 1.5s;
+
+  }
+
+  .show {
+    /* Define styles when the box is shown */
+    /* animation: floatLeft 2s ease-in-out ; */
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+

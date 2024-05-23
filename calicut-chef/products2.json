@@ -1,0 +1,70 @@
+[
+    {
+        "id": 1,
+        "name":" Spicy Raw Mango",
+        "price": 1.600,
+        "image": "image/spicymango.png"
+    },
+    {
+        "id": 2,
+        "name":" Apple Honey Mint",
+        "price": 1.600,
+        "image": "image/applemint.png"
+    },
+    {
+        "id": 3,
+        "name":" Green Salad",
+        "price": 1.200,
+        "image": "image/greensalad.png"
+    },
+    {
+        "id": 4,
+        "name":" Sea Food Chowder",
+        "price": 2.000,
+        "image": "image/seafoodchowder.png"
+    },
+    {
+        "id": 5,
+        "name":" Sweet Corn Chicken",
+        "price": 1.600,
+        "image": "image/sweetcorn.png"
+    },
+    {
+        "id": 6,
+        "name":" Sweet Corn Veg",
+        "price": 1.350,
+        "image": "image/sweetcorn.png"
+    },
+    {
+        "id": 7,
+        "name":" Hot And Sour Chicken",
+        "price": 1.600,
+        "image": "image/hotandsourchicken.png"
+    },
+    {
+        "id": 8,
+        "name":" Hot And Sour Veg",
+        "price": 1.350,
+        "image": "image/hotandsourveg.png"
+    },
+    {
+        "id": 9,
+        "name":" Nadan Soup Chicken",
+        "price": 1.600,
+        "image": "image/nadansoupchicken.png"
+    },
+    {
+        "id": 10,
+        "name":" Nadan Soup Mutton",
+        "price": 1.850,
+        "image": "image/nadansoupmutton.png"
+    },
+    {
+        "id": 11,
+        "name":" Nadan Soup Veg",
+        "price": 1.350,
+        "image": "image/nadansoupveg.png"
+    }
+    
+    
+]
