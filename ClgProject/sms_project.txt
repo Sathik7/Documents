@@ -1,0 +1,588 @@
+INDEX
+
+
+<?php
+session_start();
+error_reporting(0);
+include('includes/dbconnection.php');
+?>
+<!doctype html>
+<html>
+<head>
+<title>Student  Management System || Home Page</title>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--bootstrap-->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!--coustom css-->
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<!--script-->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- js -->
+<script src="js/bootstrap.js"></script>
+<!-- /js -->
+<!--fonts-->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400italic,400,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!--/fonts-->
+<!--hover-girds-->
+<link rel="stylesheet" type="text/css" href="css/default.css" />
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+<script src="js/modernizr.custom.js"></script>
+<!--/hover-grids-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<!--script-->
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+</script>
+<!--/script-->
+</head>
+	<body>
+<?php include_once('includes/header.php');?>
+<div class="banner">
+  <div class="container">
+  <script src="js/responsiveslides.min.js"></script>
+ <script>
+    $(function () {
+      $("#slider").responsiveSlides({
+        auto: true,
+        nav: true,
+        speed: 500,
+        namespace: "callbacks",
+        pager: true,
+      });
+    });
+  </script>
+<div class="slider">
+       <div class="callbacks_container">
+        <ul class="rslides" id="slider">
+         <li>     
+          <h3>Student Management System</h3>      
+           <p>Registered Students can Login Here</p>             
+          <div class="readmore">
+          <a href="user/login.php">Student Login<i class="glyphicon glyphicon-menu-right"> </i></a>
+          </div>
+         </li>
+
+ 
+        </ul>
+      </div>
+    </div>
+</div>      
+  </div>
+<div class="welcome">
+	<div class="container">
+		<?php
+$sql="SELECT * from tblpage where PageType='aboutus'";
+$query = $dbh -> prepare($sql);
+$query->execute();
+$results=$query->fetchAll(PDO::FETCH_OBJ);
+
+$cnt=1;
+if($query->rowCount() > 0)
+{
+foreach($results as $row)
+{               ?>
+		<h2><?php  echo htmlentities($row->PageTitle);?></h2>
+		<p><?php  echo ($row->PageDescription);?></p><?php $cnt=$cnt+1;}} ?>
+	</div>
+</div>
+<!--/welcome-->
+
+
+<!--testmonials-->
+<div class="testimonials">
+	<div class="container">
+			<div class="testimonial-nfo">
+        <h3>Public Notices</h3>
+         <marquee  style="height:350px;" direction ="up" onmouseover="this.stop();" onmouseout="this.start();">
+				<?php
+$sql="SELECT * from tblpublicnotice";
+$query = $dbh -> prepare($sql);
+$query->execute();
+$results=$query->fetchAll(PDO::FETCH_OBJ);
+
+$cnt=1;
+if($query->rowCount() > 0)
+{
+foreach($results as $row)
+{               ?>
+
+ 
+		<a href="view-public-notice.php?viewid=<?php echo htmlentities ($row->ID);?>" target="_blank" style="color:#fff;">
+          <?php  echo htmlentities($row->NoticeTitle);?>(<?php  echo htmlentities($row->CreationDate);?>)</a>
+          <hr /><br />
+				    
+			<?php $cnt=$cnt+1;}} ?>
+	</marquee></div>
+	</div>
+</div>
+<!--\testmonials-->
+<!--specfication-->
+
+<!--/specfication-->
+<?php include_once('includes/footer.php');?>
+<!--/copy-rights-->
+	</body>
+</html>
+
+
+ABOUT 
+
+
+
+
+<?php
+session_start();
+error_reporting(0);
+include('includes/dbconnection.php');
+?>
+<!doctype html>
+<html>
+<head>
+<title>Student  Management System || About Us Page</title>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--bootstrap-->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!--coustom css-->
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<!--script-->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- js -->
+<script src="js/bootstrap.js"></script>
+<!-- /js -->
+<!--fonts-->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400italic,400,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!--/fonts-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<!--script-->
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+</script>
+<!--/script-->
+</head>
+	<body>
+<!--header-->
+<?php include_once('includes/header.php');?>
+<!-- Top Navigation -->
+<div class="banner banner5">
+	<div class="container">
+	<h2>About</h2>
+	</div>
+</div>
+<!--header-->
+<!-- About -->
+<div class="about">
+	 <div class="container">
+		 <div class="about-info-grids">
+			 <div class="col-md-5 abt-pic">
+				 <img src="images/abt.jpg" class="img-responsive" alt=""/>
+			 </div>
+			 <div class="col-md-7 abt-info-pic">
+			 	<?php
+$sql="SELECT * from tblpage where PageType='aboutus'";
+$query = $dbh -> prepare($sql);
+$query->execute();
+$results=$query->fetchAll(PDO::FETCH_OBJ);
+
+$cnt=1;
+if($query->rowCount() > 0)
+{
+foreach($results as $row)
+{               ?>
+				 
+				 <p><?php  echo ($row->PageDescription);?></p><?php $cnt=$cnt+1;}} ?>
+				
+			 </div>
+			 <div class="clearfix"> </div>
+		 </div>
+		
+	 </div>
+</div>
+<!-- /About -->
+<?php include_once('includes/footer.php');?>
+<!--/copy-rights-->
+	</body>
+</html>
+
+
+
+LOGIN
+
+<?php
+session_start();
+error_reporting(0);
+include('includes/dbconnection.php');
+
+if(isset($_POST['login'])) 
+  {
+    $stuid=$_POST['stuid'];
+    $password=md5($_POST['password']);
+    $sql ="SELECT StuID,ID,StudentClass FROM tblstudent WHERE (UserName=:stuid || StuID=:stuid) and Password=:password";
+    $query=$dbh->prepare($sql);
+    $query-> bindParam(':stuid', $stuid, PDO::PARAM_STR);
+$query-> bindParam(':password', $password, PDO::PARAM_STR);
+    $query-> execute();
+    $results=$query->fetchAll(PDO::FETCH_OBJ);
+    if($query->rowCount() > 0)
+{
+foreach ($results as $result) {
+$_SESSION['sturecmsstuid']=$result->StuID;
+$_SESSION['sturecmsuid']=$result->ID;
+$_SESSION['stuclass']=$result->StudentClass;
+}
+
+  if(!empty($_POST["remember"])) {
+//COOKIES for username
+setcookie ("user_login",$_POST["stuid"],time()+ (10 * 365 * 24 * 60 * 60));
+//COOKIES for password
+setcookie ("userpassword",$_POST["password"],time()+ (10 * 365 * 24 * 60 * 60));
+} else {
+if(isset($_COOKIE["user_login"])) {
+setcookie ("user_login","");
+if(isset($_COOKIE["userpassword"])) {
+setcookie ("userpassword","");
+        }
+      }
+}
+$_SESSION['login']=$_POST['stuid'];
+echo "<script type='text/javascript'> document.location ='dashboard.php'; </script>";
+} else{
+echo "<script>alert('Invalid Details');</script>";
+}
+}
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <title>Student  Management System|| Student Login Page</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="vendors/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="css/style.css">
+   
+  </head>
+  <body>
+    <div class="container-scroller">
+      <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="content-wrapper d-flex align-items-center auth">
+          <div class="row flex-grow">
+            <div class="col-lg-4 mx-auto">
+              <div class="auth-form-light text-left p-5">
+                <div class="brand-logo">
+                  <img src="images/logo.svg"> SMS
+                </div>
+                <h4>Hello! let's get started</h4>
+                <h6 class="font-weight-light">Sign in to continue.</h6>
+                <form class="pt-3" id="login" method="post" name="login">
+                  <div class="form-group">
+                    <input type="text" class="form-control form-control-lg" placeholder="enter your student id or username" required="true" name="stuid" value="<?php if(isset($_COOKIE["user_login"])) { echo $_COOKIE["user_login"]; } ?>" >
+                  </div>
+                  <div class="form-group">
+                    
+                    <input type="password" class="form-control form-control-lg" placeholder="enter your password" name="password" required="true" value="<?php if(isset($_COOKIE["userpassword"])) { echo $_COOKIE["userpassword"]; } ?>">
+                  </div>
+                  <div class="mt-3">
+                    <button class="btn btn-success btn-block loginbtn" name="login" type="submit">Login</button>
+                  </div>
+                  <div class="my-2 d-flex justify-content-between align-items-center">
+                    <div class="form-check">
+                      <label class="form-check-label text-muted">
+                        <input type="checkbox" id="remember" class="form-check-input" name="remember" <?php if(isset($_COOKIE["user_login"])) { ?> checked <?php } ?> /> Keep me signed in </label>
+                    </div>
+                    <a href="forgot-password.php" class="auth-link text-black">Forgot password?</a>
+                  </div>
+                  <div class="mb-2">
+                    <a href="../index.php" class="btn btn-block btn-facebook auth-form-btn">
+                      <i class="icon-social-home mr-2"></i>Back Home </a>
+                  </div>
+                  
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="js/off-canvas.js"></script>
+    <script src="js/misc.js"></script>
+    <!-- endinject -->
+  </body>
+</html>
+
+
+
+STUDENT PROFILE
+
+
+<?php
+session_start();
+//error_reporting(0);
+include('includes/dbconnection.php');
+if (strlen($_SESSION['sturecmsstuid']==0)) {
+  header('location:logout.php');
+  } else{
+   
+  ?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+    <title>Student Management System|| View Students Profile</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="vendors/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="css/style.css" />
+    
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+     <?php include_once('includes/header.php');?>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+      <?php include_once('includes/sidebar.php');?>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title"> View Students Profile </h3>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
+                  <li class="breadcrumb-item active" aria-current="page"> View Students Profile</li>
+                </ol>
+              </nav>
+            </div>
+            <div class="row">
+          
+              <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    
+                    <table border="1" class="table table-bordered mg-b-0">
+                      <?php
+$sid=$_SESSION['sturecmsstuid'];
+$sql="SELECT tblstudent.StudentName,tblstudent.StudentEmail,tblstudent.StudentClass,tblstudent.Gender,tblstudent.DOB,tblstudent.StuID,tblstudent.FatherName,tblstudent.MotherName,tblstudent.ContactNumber,tblstudent.AltenateNumber,tblstudent.Address,tblstudent.UserName,tblstudent.Password,tblstudent.Image,tblstudent.DateofAdmission,tblclass.ClassName,tblclass.Section from tblstudent join tblclass on tblclass.ID=tblstudent.StudentClass where tblstudent.StuID=:sid";
+$query = $dbh -> prepare($sql);
+$query->bindParam(':sid',$sid,PDO::PARAM_STR);
+$query->execute();
+$results=$query->fetchAll(PDO::FETCH_OBJ);
+$cnt=1;
+if($query->rowCount() > 0)
+{
+foreach($results as $row)
+{               ?>
+ <tr align="center" class="table-warning">
+<td colspan="4" style="font-size:20px;color:blue">
+ Students Details</td></tr>
+
+    <tr class="table-info">
+    <th>Student Name</th>
+    <td><?php  echo $row->StudentName;?></td>
+     <th>Student Email</th>
+    <td><?php  echo $row->StudentEmail;?></td>
+  </tr>
+  <tr class="table-warning">
+     <th>Student Class</th>
+    <td><?php  echo $row->ClassName;?> <?php  echo $row->Section;?></td>
+     <th>Gender</th>
+    <td><?php  echo $row->Gender;?></td>
+  </tr>
+  <tr class="table-danger">
+    <th>Date of Birth</th>
+    <td><?php  echo $row->DOB;?></td>
+    <th>Student ID</th>
+    <td><?php  echo $row->StuID;?></td>
+  </tr>
+  <tr class="table-success">
+    <th>Father Name</th>
+    <td><?php  echo $row->FatherName;?></td>
+    <th>Mother Name</th>
+    <td><?php  echo $row->MotherName;?></td>
+  </tr>
+  <tr class="table-primary">
+    <th>Contact Number</th>
+    <td><?php  echo $row->ContactNumber;?></td>
+    <th>Altenate Number</th>
+    <td><?php  echo $row->AltenateNumber;?></td>
+  </tr>
+  <tr class="table-progress">
+    <th>Address</th>
+    <td><?php  echo $row->Address;?></td>
+    <th>User Name</th>
+    <td><?php  echo $row->UserName;?></td>
+  </tr>
+   <tr class="table-info">
+    <th>Profile Pics</th>
+    <td><img src="../admin/images/<?php echo $row->Image;?>"></td>
+    <th>Date of Admission</th>
+    <td><?php  echo $row->DateofAdmission;?></td>
+  </tr>
+  <?php $cnt=$cnt+1;}} ?>
+</table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+         <?php include_once('includes/footer.php');?>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="vendors/select2/select2.min.js"></script>
+    <script src="vendors/typeahead.js/typeahead.bundle.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="js/off-canvas.js"></script>
+    <script src="js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="js/typeahead.js"></script>
+    <script src="js/select2.js"></script>
+    <!-- End custom js for this page -->
+  </body>
+</html><?php }  ?>
+
+
+DASHBOARD
+
+
+
+
+
+
+
+
+
+
+<?php
+session_start();
+//error_reporting(0);
+include('includes/dbconnection.php');
+if (strlen($_SESSION['sturecmsstuid']==0)) {
+  header('location:logout.php');
+  } else{
+   
+  ?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+    <title>Student  Management System|||Dashboard</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="vendors/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="./vendors/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="./vendors/chartist/chartist.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- End layout styles -->
+   
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+     <?php include_once('includes/header.php');?>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <?php include_once('includes/sidebar.php');?>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row purchace-popup">
+              <div class="col-12 stretch-card grid-margin">
+                <div class="card card-secondary">
+                  <span class="card-body d-lg-flex align-items-center">
+                    <p class="mb-lg-0">Notices from the school kindly check! </p>
+                    <a href="view-notice.php" target="_blank" class="btn btn-warning purchase-button btn-sm my-1 my-sm-0 ml-auto">View Notice</a>
+                  
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+         <?php include_once('includes/footer.php');?>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="./vendors/chart.js/Chart.min.js"></script>
+    <script src="./vendors/moment/moment.min.js"></script>
+    <script src="./vendors/daterangepicker/daterangepicker.js"></script>
+    <script src="./vendors/chartist/chartist.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="js/off-canvas.js"></script>
+    <script src="js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="./js/dashboard.js"></script>
+    <!-- End custom js for this page -->
+  </body>
+</html><?php }  ?>
+
