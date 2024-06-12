@@ -1,0 +1,40 @@
+{
+    "products":[
+        {
+            "id":1,
+            "name": "ORANGE",
+            "price": "2",
+            "image": "https://cdn.pixabay.com/photo/2016/10/07/13/36/tangerines-1721590_1280.jpg"
+        },
+        {
+            "id":2,
+            "name": "MILK",
+            "price": "2",
+            "image": "https://cdn.pixabay.com/photo/2017/07/05/15/41/milk-2474993_960_720.jpg"
+        },
+        {
+            "id":3,
+            "name": "ICE CREAM",
+            "price": "4",
+            "image": "https://cdn.pixabay.com/photo/2018/08/16/22/59/ice-cream-3611698_960_720.jpg"
+        },
+        {
+            "id":4,
+            "name": "SALMON",
+            "price": "10",
+            "image": "https://cdn.pixabay.com/photo/2016/03/05/19/02/salmon-1238248_1280.jpg"
+        },
+        {
+            "id":5,
+            "name": "WATERMELON",
+            "price": "2",
+            "image": "https://cdn.pixabay.com/photo/2015/06/19/16/48/watermelon-815072_1280.jpg"
+        },
+        {
+            "id":6,
+            "name": "POTATO",
+            "price": "4",
+            "image": "https://cdn.pixabay.com/photo/2016/08/11/08/43/potatoes-1585060_1280.jpg"
+        }
+    ]
+}
